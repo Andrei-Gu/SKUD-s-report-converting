@@ -15,14 +15,14 @@ def normalizing_time(s):
 # Определение содержания строки: проход, название точки прохода или иное.
 def identifing_string(s):
     temp = [i.strip('"') for i in s.split(';')]
-    frst_element = temp[0]
-    if all((frst_element[0 : 2].isdigit(), frst_element[3 : 5].isdigit())):
-        date = converting_date(frst_element.split()[0])
-        time = normalizing_time(frst_element.split()[1])
+    first_element = temp[0]
+    if all((first_element[0 : 2].isdigit(), first_element[3 : 5].isdigit())):
+        date = converting_date(first_element.split()[0])
+        time = normalizing_time(first_element.split()[1])
         name = temp[4]
         return 'passage', name, date, time
     elif temp[1] == temp[2] == temp[3] == '':
-        return frst_element  # checkpoint
+        return first_element  # checkpoint
     else:
         pass
 
